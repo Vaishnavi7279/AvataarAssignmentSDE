@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheFashionista</title>
+    <link href="SheFashionista.css" rel="stylesheet" />
+
+  </head>
+  <body>
+    <!-- NAVBAR -->
+<nav class="navbar">
+    
+      <input type="checkbox" id="check">
+      <label for="check" class="more">
+        <i class='bx bx-menu'id="menu"></i>
+      </label>
+    <ul>
+      <li>
+          <a href="#clothing">Clothing</a>
+          <div class="dropdown-content">
+              <a href="#western">Western</a>
+              <a href="#Formals">Formals</a>
+              <a href="#ethnic">Ethnic</a>
+              <a href="#sleepwear">Sleepwear</a>
+              <a href="#casuals">Casuals</a>
+          </div>
+      </li>
+      <li>
+          <a href="#accessories">Accessories</a>
+          <div class="dropdown-content">
+              <a href="#skincare">Skincare</a>
+              <a href="#hair-products">Hair Products</a>
+              <a href="#others">Others</a>
+          </div>
+      </li>
+      <li>
+        <a href="#footwear">Footwear</a>
+        <div class="dropdown-content">
+            <a href="#shoes">Shoes</a>
+            <a href="#flats">Flats</a>
+            <a href="#heels">Heels</a>
+            <a href="#plagiarism-policy">Plagiarism Policy</a>
+        </div>
+      </li>
+      <li><a href="#jewellery">Jewellery</a></li>
+      <li><a href="#handbags">Handbags</a></li>
+      <a href="#" class="login">Start Shopping</a>
+    </ul>
+    <script>
+        window.onscroll = function() {
+          makeNavbarSticky();
+        };
+  
+        const navbar = document.querySelector(".navbar");
+        const offsetTop = navbar.offsetTop;
+  
+        function makeNavbarSticky() {
+          if (window.pageYOffset >= offsetTop) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+      </script>
+</nav>
+
+<!-- HEADING and DESCRIPTION -->
+<div class="heading">
+    <main>
+      <section class="landing">
+          <center>
+              <main>
+              <br><br>
+              <body>
+                <div id="typing-animation"> <span class="cursor"></span></div>
+              
+                <script src="TypingAnimation.js"></script>
+              </body>
+          </center>
+      </section>
+
+        <div class="carousel-box"> 
+          <div class="title">Clothing</div>
+          
+          <div class="carousel">
+              <img class="carousel-item carousel-item-1" src="C:\Projects\College\AvataarAssignmentSDE\Images\clothing.jpg" alt="Clothing">
+              <img class="carousel-item carousel-item-2" src="C:\Projects\College\AvataarAssignmentSDE\Images\shoes.jpg" alt="Shoes" >
+              <img class="carousel-item carousel-item-3" src="C:\Projects\College\AvataarAssignmentSDE\Images\watches.jpg" alt="Watches">
+              <img class="carousel-item carousel-item-4" src="C:\Projects\College\AvataarAssignmentSDE\Images\accessories.jpg" alt="Accessories">
+              <img class="carousel-item carousel-item-5" src="C:\Projects\College\AvataarAssignmentSDE\Images\jewellery.jpg" alt="Jewellery">
+              <img class="carousel-item carousel-item-6" src="C:\Projects\College\AvataarAssignmentSDE\Images\handbags.jpg" alt="Handbags">
+              <img class="carousel-item carousel-item-7" src="C:\Projects\College\AvataarAssignmentSDE\Images\western.jpg" alt="Western">
+  
+          </div>
+  
+          <div class="carousel-controls"> 
+            <button class="carousel-control-previous" id="prevBtn">Previous</button>
+            <button class="carousel-control-next" id="nextBtn">Next</button>
+          </div>
+        </div>
+      </main>
+      <script src="Carousel.js"></script>
+</div>
+
+  <div class="slideshow-container">
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: black;">Items you have previously viewed</h1>
+    
+    <div class="slides">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen1.jpg" alt="Image 1">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen2.jpg" alt="Image 2">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen3.jpg" alt="Image 3">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen4.jpg" alt="Image 4">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen5.jpg" alt="Image 5">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen6.jpg" alt="Image 6">
+      <img src="C:\Projects\College\AvataarAssignmentSDE\Images\previouslyseen7.jpg" alt="Image 7">
+    </div>
+
+    <!-- Navigation arrows -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+
+  <script src="PreviouslyViewed.js"></script>
+</body>
+</html>
