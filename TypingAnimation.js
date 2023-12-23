@@ -7,7 +7,7 @@ function type() {
   typingAnimation.textContent += text[index];
   index++;
   if (index < text.length) {
-    setTimeout(type, 100); // Adjust typing speed by changing the delay (in milliseconds)
+    setTimeout(type, 100); 
   }
 }
 

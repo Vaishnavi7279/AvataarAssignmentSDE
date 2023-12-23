@@ -1,5 +1,4 @@
-
-
+//Javascript to control the carousel movement 
 document.addEventListener("DOMContentLoaded", function () {
   
     const prevBtn = document.getElementById("prevBtn");
@@ -14,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCarousel();
       }, 5000);
     }
-  
+    
+    //Sliding the images one after another
     nextBtn.addEventListener("click", function () {
       currentIndex = (currentIndex + 1+ totalImages) % totalImages;
       updateCarousel();
@@ -28,17 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
   
     function updateCarousel() {
       const galleryItems = document.querySelectorAll(".carousel-item");
-    
       
       const chosenImage = galleryItems[currentIndex];
       const altText = chosenImage.alt;
     
-      // Update navigation title with image alt text
+      //Update navigation title with image alt text
       const navTitle = document.querySelector(".title");
       navTitle.textContent = altText;
-      navTitle.style.color = "#292929";
+      navTitle.style.color = "white";
   
-    
+      //Image Styling
       galleryItems.forEach((item, index) => {
         if(index==currentIndex)
           {
@@ -105,6 +104,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   
     startAutoPlay();
-    
-    
+  
   });

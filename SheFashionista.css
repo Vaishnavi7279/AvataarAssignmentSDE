@@ -4,9 +4,11 @@
     margin: 0;
     padding: 0;
     max-width: 100%;
+    background-color: black;
 }
 
 /* NAVBAR */
+/* Menu Options and Dropdown Menu Styling */
 .navbar {
     background-color: black;
     position: relative;
@@ -16,11 +18,6 @@
     margin: 0;
     border: #FFFFFF;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
 .navbar ul {
     list-style: none;
     padding: 0;
@@ -28,6 +25,7 @@
     justify-content: center;
     align-items: center;
     border: #FFFFFF;
+    max-height: 2%;
 }
 .navbar li {
     margin: 0 20px;
@@ -40,7 +38,7 @@
     font-family: Montserrat,sans-serif;
     font-weight: 200;
 }
-a.login{
+a.login {
     font-size: 1rem;
     font-weight: 700;
     font-weight: bold;
@@ -54,16 +52,43 @@ a.login{
     cursor: pointer;
     transition: all .28s cubic-bezier(.25,.46,.45,.94);;
 }
-a.login:hover{
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    min-width: 160px;
+    border: #292929;
+    z-index: 1;
+}
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+}
+/* Hover effects */
+.navbar a:hover {
+    color: #02bff4;
+}
+.navbar li:hover .dropdown-content {
+    display: block;
+    background-color: black;
+    color: white;
+}
+.dropdown-content a:hover {
+    background-color: white;
+    color: black;
+}
+a.login:hover {
     border-color: #02bff4;
     background-color: transparent;
     color: #02bff4;
     width: auto;
 }
-#check{
+#check {
     display: none;
 }
-.more{
+/* "More" Option */
+.more {
     position: absolute;
     right: 10px;
     font-size: 25px;
@@ -72,17 +97,16 @@ a.login:hover{
     display: none;
 }
 
-@media(max-width:935px){
+/* To adjust the menu "More" */
+@media(max-width:935px) {
     .header{
-        padding: 0.6rem 1rem; /*TB, LR*/    
+        padding: 0.6rem 1rem;     
     }
 }
-
-@media(max-width:903px){
+@media(max-width:903px) {
     .more{
         display: inline-flex;
     }
-  
     .navbar{
         background-color:black;
         position: absolute;
@@ -104,44 +128,26 @@ a.login:hover{
         margin: 0.8rem 0;
     }
 }
-.navbar a:hover {
-    color: #02bff4;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: black;
-    color: white;
-    min-width: 160px;
-    border: #292929;
-    z-index: 1;
-}
-.navbar li:hover .dropdown-content {
-    display: block;
-    background-color: transparent;
-    color: white;
-}
-.dropdown-content a {
-    padding: 12px 16px;
-    display: block;
-}
-.dropdown-content a:hover {
-    background-color: white;
-    color: black;
+/* To fix the navbar on the top of the page while scrolling */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
-/* HEADING and DESCRIPTION */
-/* CSS for the typing animation */
+/* HEADING */
+/* Typing animation */
 .heading {
+    padding-top: 2.5%;
     color: white;
     background-color: black;
+    max-width: 100%;
 }
 #typing-animation {
     font-size: 64px;
     font-family: 'Times New Roman', Times, serif;
     color: black(241, 117, 35);
     overflow: visible;
-    /*border-left: .15em solid orange;*/
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .05em;
@@ -158,7 +164,8 @@ a.login:hover{
     animation: blink 1s step-end infinite;
 }
 
-.carousel-box{
+/* CAROUSEL BOX */
+.carousel-box {
     width: 100%;
     position: relative;
     top: 50px;
@@ -168,8 +175,7 @@ a.login:hover{
     background-color: black;
     padding: 3%;
 }
-.carousel{
-   
+.carousel {
     align-items: center;
     display: flex;
     height: 400px;
@@ -177,7 +183,7 @@ a.login:hover{
     position: relative;
     
 }
-.carousel-item{
+.carousel-item {
     height: 200px;
     opacity: 0;
     position: absolute;
@@ -186,37 +192,33 @@ a.login:hover{
     z-index: 0;
     border-radius: 15px;
     background-size:contain;
-    
 }
-.carousel-item-1{
+.carousel-item-1 {
     left: -15%;
     opacity: .4;
     transform: translateX(-50%);
 }
-
-.carousel-item-2,.carousel-item-6{
+.carousel-item-2,.carousel-item-6 {
     height: 250px;
     opacity: .6;
     width: 380px;
     z-index: 1;
-   
 }
-.carousel-item-3,.carousel-item-5{
+.carousel-item-3,.carousel-item-5 {
     height: 300px;
     opacity: .8;
     width: 430px;
     z-index: 2;
-   
 }
-.carousel-item-2{
+.carousel-item-2 {
     left: 0%;
     transform: translateX(-50%)
 }
-.carousel-item-3{
+.carousel-item-3 {
    left: 20%;
    transform: translateX(-50%)
 }
-.carousel-item-4{
+.carousel-item-4 {
     box-shadow: -2px 5px 33px 6px rgba(0,0,0,0.35);
     height: 350px;
     width: 490px;
@@ -225,66 +227,67 @@ a.login:hover{
     transform: translateX(-50%);
     z-index: 3;
 }
-.carousel-item-5{
+.carousel-item-5 {
     left:80%;
     transform: translateX(-50%);
 }
-.carousel-item-6{
+.carousel-item-6 {
     left:100%;
     transform: translateX(-50%);
 }
-.carousel-item-7{
+.carousel-item-7 {
     left: 115%;
     opacity: .4;
     transform: translateX(-50%);
 }
-
-.carousel-controls{
+.carousel-controls {
     align-self: center;
+    font-family: Montserrat, sans-serif;
 }
 .carousel-controls:hover {
     color: #02bff4;
 }
-.carousel-control-previous,.carousel-control-next{
+.carousel-control-previous,.carousel-control-next {
     background-color: transparent;
     color: white;
     border:none;
     font-size: 1.2rem;
-    
     margin:10px 40px;
     cursor: pointer;
 }
-.carousel-control-previous
-{
+.carousel-control-previous {
     padding: 5px 15px;
 }
-.carousel-control-next{
+.carousel-control-next {
     padding: 5px 25px;
 }
   
-  .slideshow-container {
+/* IMAGE SLIDESHOW */
+.slideshow-container {
     width: auto;
     position: relative;
     margin: 0;
-    display: flex;
     align-items: center;
-    padding: 3%;
-  }
-  
-  .slides {
+
+}
+.slides {
     display: flex;
-    width: auto; /* Adjust based on the number of images */
+    width: auto; 
     transition: transform 0.8s ease-in-out;
-  }
-  
-  img {
+}
+img {
     width: 50%;
     height: auto;
     margin: 4%;
-  }
-  
-  /* Navigation arrows style */
-  .prev, .next {
+}
+.heading2 {
+    padding-top: 5%;
+    font-family: Montserrat,sans-serif;
+    color: black;
+    justify-content: center;
+}
+/* Navigation arrows style */
+.prev, .next {
     position: absolute;
     top: 50%;
     width: auto;
@@ -296,19 +299,15 @@ a.login:hover{
     cursor: pointer;
     border-radius: 0 3px 3px 0;
     user-select: none;
-  }
-  
-  .prev {
+} 
+.prev {
     left: 0;
     border-radius: 3px 0 0 3px;
-  }
-  
-  .next {
+}
+.next {
     right: 0;
-  }
-  
-  /* Hover effect on arrows */
-  .prev:hover, .next:hover {
+}
+/* Hover effect on arrows */
+.prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-  }
-  
+}

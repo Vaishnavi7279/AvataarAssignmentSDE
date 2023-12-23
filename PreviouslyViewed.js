@@ -1,3 +1,4 @@
+// JavaScript to control the slideshow in the Previously Viewed container
 let slideIndex = 1;
 
 function plusSlides(n) {
@@ -18,5 +19,5 @@ function showSlides(n) {
   slides.style.transform = `translateX(${-100 * (slideIndex - 1) / slideIndex}%)`;
 }
 
-// Auto slide change (uncomment the line below to enable auto-slideshow)
-// setInterval(() => plusSlides(1), 3000);
+//To automatically move the images
+setInterval(() => plusSlides(1), 3000);

@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SheFashionista</title>
-    <link href="SheFashionista.css" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SheFashionista</title>
+  <link href="SheFashionista.css" rel="stylesheet" />
+</head>
 
-  </head>
-  <body>
-    <!-- NAVBAR -->
+<body>
+<!-- DYNAMIC and RESPONSIVE NAVBAR -->
 <nav class="navbar">
-    
-      <input type="checkbox" id="check">
-      <label for="check" class="more">
-        <i class='bx bx-menu'id="menu"></i>
-      </label>
+    <!--To adjust the options according to the screen size-->
+    <input type="checkbox" id="check">
+    <label for="check" class="more">
+      <i class='bx bx-menu'id="menu"></i>
+    </label>
+
+    <!--Options and dropdown menu -->
     <ul>
       <li>
           <a href="#clothing">Clothing</a>
@@ -47,6 +49,8 @@
       <li><a href="#handbags">Handbags</a></li>
       <a href="#" class="login">Start Shopping</a>
     </ul>
+
+    <!--To fix the navbar on the top of the page during scrolling-->
     <script>
         window.onscroll = function() {
           makeNavbarSticky();
@@ -65,24 +69,19 @@
       </script>
 </nav>
 
-<!-- HEADING and DESCRIPTION -->
-<div class="heading">
+  <!-- HEADING -->
+  <div class="heading">
     <main>
       <section class="landing">
           <center>
-              <main>
-              <br><br>
-              <body>
                 <div id="typing-animation"> <span class="cursor"></span></div>
-              
+                <!--To display the heading in a typing animation-->
                 <script src="TypingAnimation.js"></script>
-              </body>
           </center>
       </section>
 
-        <div class="carousel-box"> 
-          <div class="title">Clothing</div>
-          
+      <div class="carousel-box"> 
+        <div class="title">Clothing</div>
           <div class="carousel">
               <img class="carousel-item carousel-item-1" src="Images\clothing.jpg" alt="Clothing">
               <img class="carousel-item carousel-item-2" src="Images\shoes.jpg" alt="Shoes" >
@@ -91,7 +90,6 @@
               <img class="carousel-item carousel-item-5" src="Images\jewellery.jpg" alt="Jewellery">
               <img class="carousel-item carousel-item-6" src="Images\handbags.jpg" alt="Handbags">
               <img class="carousel-item carousel-item-7" src="Images\western.jpg" alt="Western">
-  
           </div>
   
           <div class="carousel-controls"> 
@@ -99,13 +97,19 @@
             <button class="carousel-control-next" id="nextBtn">Next</button>
           </div>
         </div>
-      </main>
-      <script src="Carousel.js"></script>
-</div>
+      </div>
+    </main>
+      
+    <!--To move the carousel images-->
+    <script src="Carousel.js"></script>
+  </div>
+
+  <!--Panel of images in a slideshow-->
+  <center>
+    <div class="heading2"><h1>Items you have previously viewed</h1></div>
+  </center>
 
   <div class="slideshow-container">
-    <h1 style="font-family: Arial, Helvetica, sans-serif; color: black;">Items you have previously viewed</h1>
-    
     <div class="slides">
       <img src="Images\previouslyseen1.jpg" alt="Image 1">
       <img src="Images\previouslyseen2.jpg" alt="Image 2">
@@ -114,6 +118,10 @@
       <img src="Images\previouslyseen5.jpg" alt="Image 5">
       <img src="Images\previouslyseen6.jpg" alt="Image 6">
       <img src="Images\previouslyseen7.jpg" alt="Image 7">
+      <img src="Images\previouslyseen8.jpg" alt="Image 8">
+      <img src="Images\previouslyseen9.jpg" alt="Image 9">
+      <img src="Images\previouslyseen10.jpg" alt="Image 10">
+
     </div>
 
     <!-- Navigation arrows -->
@@ -121,6 +129,8 @@
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
 
+  <!--To control the slideshow movement-->
   <script src="PreviouslyViewed.js"></script>
+
 </body>
 </html>
