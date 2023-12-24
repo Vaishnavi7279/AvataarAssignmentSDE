@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
-.body {
+body {
     margin: 0;
     padding: 0;
     max-width: 100%;
-    background-color: black;
+    background-color: white;
+    font-family: Montserrat, sans-serif;
+    justify-content: center;
+}
+
+hr {
+    max-width: 50%;
+    justify-content: center;
 }
 
 /* NAVBAR */
@@ -35,7 +42,6 @@
     font-size: 1rem;
     color: white;
     text-decoration: none;
-    font-family: Montserrat,sans-serif;
     font-weight: 200;
 }
 a.login {
@@ -67,7 +73,7 @@ a.login {
 }
 /* Hover effects */
 .navbar a:hover {
-    color: #02bff4;
+    font-weight: bold;
 }
 .navbar li:hover .dropdown-content {
     display: block;
@@ -75,8 +81,7 @@ a.login {
     color: white;
 }
 .dropdown-content a:hover {
-    background-color: white;
-    color: black;
+    color: #02bff4;
 }
 a.login:hover {
     border-color: #02bff4;
@@ -138,19 +143,23 @@ a.login:hover {
 /* HEADING */
 /* Typing animation */
 .heading {
-    padding-top: 2.5%;
-    color: white;
-    background-color: black;
+    padding-top: 15%;
+    color: black;
+    justify-content: center;
+    position: relative;
+    font-weight: 500;
     max-width: 100%;
 }
 #typing-animation {
     font-size: 64px;
-    font-family: 'Times New Roman', Times, serif;
     color: black(241, 117, 35);
     overflow: visible;
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: .05em;
+    z-index: 200;
+    opacity: 1;
+    visibility: visible;
 }
 /* Blinking cursor animation */
 @keyframes blink {
@@ -164,25 +173,23 @@ a.login:hover {
     animation: blink 1s step-end infinite;
 }
 
-/* CAROUSEL BOX */
+/* MAIN CAROUSEL BOX */
 .carousel-box {
-    width: 100%;
     position: relative;
     top: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    background-color: black;
-    padding: 3%;
+    padding: 5%;
+    margin: 0 auto;
 }
 .carousel {
-    align-items: center;
     display: flex;
     height: 400px;
     margin: 0;
     position: relative;
-    
+    align-items: center;
 }
+/* Carousel items and movement */
 .carousel-item {
     height: 200px;
     opacity: 0;
@@ -242,18 +249,17 @@ a.login:hover {
 }
 .carousel-controls {
     align-self: center;
-    font-family: Montserrat, sans-serif;
-}
-.carousel-controls:hover {
-    color: #02bff4;
 }
 .carousel-control-previous,.carousel-control-next {
     background-color: transparent;
-    color: white;
+    color: black;
     border:none;
     font-size: 1.2rem;
     margin:10px 40px;
     cursor: pointer;
+}
+.carousel-control-previous:hover,.carousel-control-next:hover {
+    font-weight: bold;
 }
 .carousel-control-previous {
     padding: 5px 15px;
@@ -261,18 +267,112 @@ a.login:hover {
 .carousel-control-next {
     padding: 5px 25px;
 }
-  
+
+/* HORIZONTAL GRID OF IMAGES */
+.column {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+}
+.animation-container {
+    position: relative;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    z-index: 200;
+}
+.falling-text {
+    position: absolute;
+    padding-right: 80%;
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fallAnimation 1s ease-out forwards; /* Animation duration and easing */
+}
+@keyframes fallAnimation {
+    0% {
+      top: -50px;
+      opacity: 0;
+    }
+    100% {
+      top: calc(50% + 50px * var(--index)); /* Adjust the final position as needed */
+      opacity: 1;
+    }
+}
+/* Delay and set index for each falling text */
+.falling-text:nth-child(2) {
+    animation-delay: 1s;
+    --index: 1;
+}
+.falling-text:nth-child(3) {
+    animation-delay: 2s;
+    --index: 2;
+}
+/* Grid of images */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.column1 {
+      display: flex;
+      flex-direction: column;
+}
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+.grid-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+/* Image hover effects */
+.grid-item:hover img {
+    transform: scale(1.1);
+    opacity: 75%;
+}
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.grid-item:hover .overlay-text {
+    opacity: 1;
+}  
+
+
 /* IMAGE SLIDESHOW */
 .slideshow-container {
-    width: auto;
+    max-width: 100%;
     position: relative;
     margin: 0;
     align-items: center;
-
+    background-color: white;
+    justify-content: center;
 }
 .slides {
     display: flex;
-    width: auto; 
+    max-width: 100%;
     transition: transform 0.8s ease-in-out;
 }
 img {
@@ -282,9 +382,9 @@ img {
 }
 .heading2 {
     padding-top: 5%;
-    font-family: Montserrat,sans-serif;
     color: black;
-    justify-content: center;
+    font-size: 2em;
+    font-weight: bold;
 }
 /* Navigation arrows style */
 .prev, .next {

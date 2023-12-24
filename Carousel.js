@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //Update navigation title with image alt text
       const navTitle = document.querySelector(".title");
       navTitle.textContent = altText;
-      navTitle.style.color = "white";
+      navTitle.style.color = "black";
   
       //Image Styling
       galleryItems.forEach((item, index) => {
